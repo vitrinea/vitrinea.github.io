@@ -1,0 +1,147 @@
+<html>
+    <head>
+      <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.1.4/dist/mindar-face-three.prod.js"></script>
+
+      <style>
+
+      *{
+        margin: 0;
+      }
+
+    .options-panel::-webkit-scrollbar {       
+      height: 10px;
+    }
+
+    .options-panel::-webkit-scrollbar-track {
+      background: rgb(218, 198, 250);        /* color of the tracking area */
+    }
+
+    .options-panel::-webkit-scrollbar-thumb {
+      background-color: rgb(149, 89, 254);    /* color of the scroll thumb */
+      border-radius: 20px;       /* roundness of the scroll thumb */
+      border: 1px solid rgb(218, 198, 250);  /* creates padding around scroll thumb */
+    } 
+
+
+
+    .container {
+      overflow: hidden;
+      position: absolute;
+      left: 20%;
+      width: 50%;
+      height: 60%;
+    }
+    .options-panel {
+      background-color: rgba(171, 184, 255, 0.438);
+      display: flex;  
+      /* flex-direction: column;
+      width: 160px; */
+      overflow-x: scroll;
+      z-index: 2;
+      /* position: fixed;
+      bottom: 0; */
+    }
+    .options-panel img {
+      border: solid 1px;
+      border-color: white;
+      width: 100px;
+      height: 100px;
+      cursor: pointer; 
+      border-radius: 50px;
+      margin: 20px;
+    }
+    .options-panel img.selected {
+      background-color: green;
+    }
+
+    .logos{
+      background-color: rgb(218, 198, 250);
+      display: flex;
+      justify-content: space-around;
+      align-items: baseline;
+      padding-bottom: 30px;
+      padding-top: 10px;
+    }
+
+/*     @media (min-width: 1000px) {
+      .container {
+        overflow: hidden;
+        position: absolute;
+        left: 20%;
+        width: 50%;
+        height: 60%;
+      }
+
+    } */
+    @media (max-width: 1000px) {
+      .container {
+        overflow: hidden;
+        position: absolute;
+        left: 0px;
+      width: 100%;
+      height: 100%;
+      }
+
+      /* .options-panel img {
+        border: solid 1px;
+        border-color: white;
+        width: 75px;
+        height: 75px;
+        cursor: pointer; 
+        border-radius: 50px;
+        margin: 20px;
+      }
+      #vitrineaTitle{
+        width: 250px;
+        height: 80px
+      }
+      #vitrineaLogo{
+        width: 50;
+        height: 50
+      } */
+      .options-panel::-webkit-scrollbar {       
+          height: 0px;
+        }
+    }
+
+    .selectedButton{
+      border-radius: 100%;
+      padding: 2px;
+      background-color: rgb(149, 89, 254);
+    }
+
+    .unselectedButton{
+      border: rgba(171, 184, 255, 0) 2px solid;
+    }
+
+    #home{
+      background-color: rgb(79, 171, 251);
+      color: white;
+      width: 70px;
+      height: 30px;
+    }
+    
+      </style>
+    </head>
+
+    <body>
+        <div class="logos">  
+          <div><a href="./index.html"><img src="./images/back.png" id="home"></img></a></div>
+          <img id="vitrineaTitle" src="./images/large.png" width="400px" height="150px" alt="Vitrinea" >
+          <img id="vitrineaLogo" src="./images/vitrinea.png" width="100px" height="100px" alt="Vitrinea" >
+        </div>
+
+
+        <div class="options-panel">
+          <img id="cancelBtn" src="./images/cancel.png"/>
+          <img id="makeUp1Btn" src="./images/makeUp1.png"/>
+          <img id="makeUp2Btn" src="./images/makeUp2.png"/>
+          <img id="makeUp3Btn" src="./images/makeUp3.png"/>
+        </div>
+
+        <div class="container">
+        </div>
+
+      <script src="mesh.js" type="module"></script>
+    </body>
+  </html>

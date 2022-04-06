@@ -1,0 +1,386 @@
+{
+  "accessors": [
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 2854,
+      "max": [
+        0.655505359172821,
+        -1.6323621273040771,
+        18.0870361328125
+      ],
+      "min": [
+        -0.3044340908527374,
+        -3.980442762374878,
+        16.734949111938477
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 34248,
+      "componentType": 5126,
+      "count": 2854,
+      "max": [
+        0.9993561506271362,
+        0.9995287656784058,
+        0.9995603561401367
+      ],
+      "min": [
+        -0.9992969036102295,
+        -0.9999403357505798,
+        -0.99920254945755
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 15144,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 68496,
+      "componentType": 5126,
+      "count": 25565,
+      "max": [
+        0.6565205454826355,
+        -2.5109782218933105,
+        17.917715072631836
+      ],
+      "min": [
+        -0.6217225193977356,
+        -3.71972393989563,
+        17.037824630737305
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 375276,
+      "componentType": 5126,
+      "count": 25565,
+      "max": [
+        0.9999728202819824,
+        0.9998806118965149,
+        0.9998838305473328
+      ],
+      "min": [
+        -0.9999564290046692,
+        -0.999904990196228,
+        -0.9999241828918457
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 60576,
+      "componentType": 5125,
+      "count": 145728,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 682056,
+      "componentType": 5126,
+      "count": 8229,
+      "max": [
+        0.6960970163345337,
+        -1.5908557176589966,
+        18.077566146850586
+      ],
+      "min": [
+        -0.6209715604782104,
+        -2.7386701107025146,
+        17.80549430847168
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 780804,
+      "componentType": 5126,
+      "count": 8229,
+      "max": [
+        0.9996743202209473,
+        0.9998296499252319,
+        0.9999790787696838
+      ],
+      "min": [
+        -0.9998312592506409,
+        -0.9999440908432007,
+        -0.9999425411224365
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 643488,
+      "componentType": 5125,
+      "count": 47040,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 879552,
+      "componentType": 5126,
+      "count": 10029,
+      "max": [
+        -0.08572874218225479,
+        -1.6352784633636475,
+        18.082860946655273
+      ],
+      "min": [
+        -0.6828674674034119,
+        -2.6169793605804443,
+        17.842409133911133
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 999900,
+      "componentType": 5126,
+      "count": 10029,
+      "max": [
+        0.9995701313018799,
+        0.998595654964447,
+        0.9997460246086121
+      ],
+      "min": [
+        -0.9999405741691589,
+        -0.9992303848266602,
+        -0.9994063377380371
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 831648,
+      "componentType": 5125,
+      "count": 57024,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 1120248,
+      "componentType": 5126,
+      "count": 1117,
+      "max": [
+        -0.011407259851694107,
+        -1.639157772064209,
+        18.092260360717773
+      ],
+      "min": [
+        -0.6619646549224854,
+        -2.6808927059173584,
+        17.843713760375977
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 1133652,
+      "componentType": 5126,
+      "count": 1117,
+      "max": [
+        0.9989980459213257,
+        0.9991479516029358,
+        0.9998435974121094
+      ],
+      "min": [
+        -0.9989914894104004,
+        -0.999129056930542,
+        -0.9999581575393677
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 1059744,
+      "componentType": 5125,
+      "count": 6336,
+      "type": "SCALAR"
+    }
+  ],
+  "asset": {
+    "extras": {
+      "author": "azdaz (https://sketchfab.com/azdaz)",
+      "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+      "source": "https://sketchfab.com/3d-models/military-necklace-d46dc83d36d64187b1628fbd3f033394",
+      "title": "Military Necklace"
+    },
+    "generator": "Sketchfab-12.66.0",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 1085088,
+      "name": "floatBufferViews",
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 1147056,
+      "byteOffset": 1085088,
+      "byteStride": 12,
+      "name": "floatBufferViews",
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 2232144,
+      "uri": "scene.bin"
+    }
+  ],
+  "materials": [
+    {
+      "doubleSided": true,
+      "name": "material_0",
+      "pbrMetallicRoughness": {
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.6
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Object_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 1,
+            "POSITION": 0
+          },
+          "indices": 2,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "Object_1",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 4,
+            "POSITION": 3
+          },
+          "indices": 5,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "Object_2",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 7,
+            "POSITION": 6
+          },
+          "indices": 8,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "Object_3",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 10,
+            "POSITION": 9
+          },
+          "indices": 11,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "Object_4",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 13,
+            "POSITION": 12
+          },
+          "indices": 14,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.220446049250313e-16,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        2.220446049250313e-16,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "Sketchfab_model"
+    },
+    {
+      "children": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "name": "MilitaryNecklace.obj.cleaner.materialmerger.gles"
+    },
+    {
+      "mesh": 0,
+      "name": "Object_2"
+    },
+    {
+      "mesh": 1,
+      "name": "Object_3"
+    },
+    {
+      "mesh": 2,
+      "name": "Object_4"
+    },
+    {
+      "mesh": 3,
+      "name": "Object_5"
+    },
+    {
+      "mesh": 4,
+      "name": "Object_6"
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "Sketchfab_Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ]
+}
