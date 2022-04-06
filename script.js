@@ -52,7 +52,7 @@ let hatsModels = [hipHopHatObject, noelHatObject, cowboyHatObject];
 let hatsButtons = [hipHopHatButton, noelHatButton, cowboyHatButton]; 
 
 //NECKLACE------------------------------------------------------
-
+/*
 let militaryNecklaceObject = sceneEl.querySelector('#militaryNecklace');
 let militaryNecklaceButton = document.getElementById("militaryNecklaceBtn");
 militaryNecklaceButton.addEventListener("click", function(){
@@ -82,12 +82,6 @@ bimboEarringButton.addEventListener("click", function(){
     interactEarrings(bimboEarringObject, bimboEarringButton)
 });
 
-/* let candyEarringObject = sceneEl.querySelector('#candyEarring');
-let candyEarringButton = document.getElementById("candyEarringBtn");
-candyEarringButton.addEventListener("click", function(){
-    interactEarrings(candyEarringObject, candyEarringButton)
-}); */
-
 let lvEarringObject = sceneEl.querySelector('#lvEarring');
 let lvEarringButton = document.getElementById("lvEarringBtn");
 lvEarringButton.addEventListener("click", function(){
@@ -102,7 +96,7 @@ topitoEarringButton.addEventListener("click", function(){
 
 let earringsModels = [bimboEarringObject ,lvEarringObject , topitoEarringObject]; 
 let earringsButtons = [bimboEarringButton ,lvEarringButton , topitoEarringButton]; 
-
+*/
 //FUNCIONES------------------------------------------------------
 
 function interactGlasses(model, btn) {
@@ -148,7 +142,7 @@ function interactHats(model, btn) {
         btn.setAttribute("class", "selectedButton"); 
     }
 }
-
+/*
 function interactNecklace(model, btn) {
     if (model.getAttribute('visible')) { 
         necklaceModels.forEach(element => {
@@ -192,7 +186,7 @@ function interactEarrings(model, btn) {
         btn.setAttribute("class", "selectedButton"); 
     }
 }
-
+*/
 function interactNone(){
     earringsModels.forEach(element => {
         element.setAttribute('visible', false);
