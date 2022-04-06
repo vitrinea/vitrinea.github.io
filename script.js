@@ -187,7 +187,7 @@ function interactEarrings(model, btn) {
     }
 }
 */
-function interactNone(){
+function interactNone(){/*
     earringsModels.forEach(element => {
         element.setAttribute('visible', false);
     });  
@@ -199,7 +199,7 @@ function interactNone(){
     });  
     necklaceButtons.forEach(element => {
         element.setAttribute("class", "unselectedButton"); 
-    });  
+    });  */
     hatsModels.forEach(element => {
         element.setAttribute('visible', false);
     });  
