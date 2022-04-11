@@ -1,359 +1,88 @@
+//POO---------------------------------------------------------------------------------------------------------------------------------
+
 let sceneEl = document.querySelector('a-scene');
+let optionsPanel = document.getElementById("firstInsert");
+let asset = document.getElementById("secondtInsert");
+
+class Modelo{
+    constructor(idBtn, srcBtn, idAsset, srcAsset, idModelAR){
+        this._idBtn = idBtn;
+        this._srcBtn = srcBtn;
+        this._idAsset = idAsset;
+        this._srcAsset = srcAsset;
+        this._idModelAR = "#"+idModelAR;
+    }
+
+    vitrinea(){
+        let firstElement = document.createElement("img");
+        firstElement.setAttribute("id", this._idBtn);
+        firstElement.setAttribute("src", this._srcBtn);
+        optionsPanel.appendChild(firstElement);
+
+        let secondElement = document.createElement("a-asset-item");
+        secondElement.setAttribute("id", this._idAsset);
+        secondElement.setAttribute("src", this._srcAsset);
+        asset.appendChild(secondElement);
+
+        let Object = sceneEl.querySelector(this._idModelAR);
+        let Button = document.getElementById(this._idBtn);
+        Button.addEventListener("click", function(){  
+            if (Object.getAttribute('visible')) { 
+                Object.setAttribute('visible', false);
+                Button.setAttribute("class", "unselectedButton");  
+            }else{
+                Object.setAttribute('visible', true);
+                Button.setAttribute("class", "selectedButton"); 
+            }
+        });
+    }
+}
 
 
+//PARAMETROS URL-------------------------------------------------------------------------------------------------------------------------
 
-
-let parameters, glassesParameter, hatsParameter, necklacesParameter, earringsParameter;
-
+let parameters, glassesParameter, hatsParameter, necklacesParameter, earringsParameter, img, model, idBtnURL, idModel, idAR;
 function getParameter( parameterName ){
 parameters = new URLSearchParams( window.location.search );
 return parameters.get( parameterName );
 }
 
 glassesParameter = getParameter("gls");
-console.log(glassesParameter)
 hatsParameter = getParameter("hat");
-console.log(hatsParameter)
 necklacesParameter = getParameter("nec");
-console.log(necklacesParameter)
 earringsParameter = getParameter("ear");
-console.log(earringsParameter)
 
-let optionsPanel = document.getElementById("firstInsert");
-let asset = document.getElementById("secondtInsert");
-//let entity = document.getElementById("thirdInsert");
+idBtnURL = getParameter("idBtn");
+img = getParameter("img");
+idModel = getParameter("idModel");
+model = getParameter("model");
+idAR = getParameter("idAR");
 
+//OBJETOS-----------------------------------------------------------------------------------------------------------------------------
+// una gafa
+//http://127.0.0.1:5500/index.html?gls=1&img=https://raw.githubusercontent.com/vitrinea/vitrinea.github.io/main/images/sunGlasses.png&model=https://raw.githubusercontent.com/vitrinea/vitrinea.github.io/main/sunGlasses/scene.gltf&idBtn=sunGlassesBtn&idModel=sunGlassesModel&idAR=sunGlasses&trackingAR=%3Ca-gltf-model%20visible=%22false%22%20rotation=%220%200%200%22%20position=%220%200%20-0.45%22%20scale=%220.008%200.008%200.008%22%20src=%22#sunGlassesModel%22%20id=%22sunGlasses%22%3E%3C/a-gltf-model%3E
 
-document.body.onload = gafasGod();
-document.body.onload = earringsGod();
-//document.body.onload = 
-
-function gafasGod () {
-
-    switch (parseInt(glassesParameter)) {
-        case 1:
-          let firstElement = document.createElement("img");
-          firstElement.setAttribute("id", "sunGlassesBtn");
-          firstElement.setAttribute("src", "images/sun.png");
-          optionsPanel.appendChild(firstElement);
-      
-          let secondElement = document.createElement("a-asset-item");
-          secondElement.setAttribute("id", "sunGlassesModel");
-          secondElement.setAttribute("src", "./sunGlasses/scene.gltf");
-          asset.appendChild(secondElement);
-  
-          
-          let sunGlassesObject = sceneEl.querySelector('#sunGlasses');
-          let sunGlassesButton = document.getElementById("sunGlassesBtn");
-          sunGlassesButton.addEventListener("click", function(){  
-              interactGlasses(sunGlassesObject, sunGlassesButton)
-              console.log("entre")
-          });
-              break;
-
-        case 2:
-        let firstElement2 = document.createElement("img");
-        firstElement2.setAttribute("id", "woodGlassesBtn");
-        firstElement2.setAttribute("src", "./images/wood.png");
-        optionsPanel.appendChild(firstElement2);
-    
-        let secondElement2 = document.createElement("a-asset-item");
-        secondElement2.setAttribute("id", "woodGlassesModel");
-        secondElement2.setAttribute("src", "./woodGlasses/scene.gltf");
-        asset.appendChild(secondElement2);
-
-        
-        let woodGlassesObject = sceneEl.querySelector('#woodGlasses');
-        let woodGlassesButton = document.getElementById("woodGlassesBtn");
-        woodGlassesButton.addEventListener("click", function(){   
-            interactGlasses(woodGlassesObject, woodGlassesButton)
-        });
-            break;
-
-        case 3:
-            let firstElement3 = document.createElement("img");
-            firstElement3.setAttribute("id", "normalGlassesBtn");
-            firstElement3.setAttribute("src", "./images/normal.png");
-            optionsPanel.appendChild(firstElement3);
-        
-            let secondElement3 = document.createElement("a-asset-item");
-            secondElement3.setAttribute("id", "normalGlassesModel");
-            secondElement3.setAttribute("src", "./normalGlasses/scene.gltf");
-            asset.appendChild(secondElement3);
-    
-            let normalGlassesObject = sceneEl.querySelector('#normalGlasses');
-            let normalGlassesButton = document.getElementById("normalGlassesBtn");
-            normalGlassesButton.addEventListener("click", function(){ 
-                interactGlasses(normalGlassesObject, normalGlassesButton)
-            });
-                break;
-  
-        default:
-            break;
-    }      
-  }
-function earringsGod () {
-
-    switch (parseInt(earringsParameter)) {
-        case 1:
-        let firstElement = document.createElement("img");
-        firstElement.setAttribute("id", "bimboEarringBtn");
-        firstElement.setAttribute("src", "./images/bimbo.png");
-        optionsPanel.appendChild(firstElement);
-    
-        let secondElement = document.createElement("a-asset-item");
-        secondElement.setAttribute("id", "bimboEarringModel");
-        secondElement.setAttribute("src", "./bimbo/sceneEdited.glb");
-        asset.appendChild(secondElement);
-
-        let bimboEarringObject = sceneEl.querySelector('#bimboEarring');
-        let bimboEarringButton = document.getElementById("bimboEarringBtn");
-        bimboEarringButton.addEventListener("click", function(){
-            interactEarrings(bimboEarringObject, bimboEarringButton)
-        });
-            break;
-
-        case 2:
-        let firstElement2 = document.createElement("img");
-        firstElement2.setAttribute("id", "lvEarringBtn");
-        firstElement2.setAttribute("src", "./images/LV.png");
-        optionsPanel.appendChild(firstElement2);
-    
-        let secondElement2 = document.createElement("a-asset-item");
-        secondElement2.setAttribute("id", "lvEarringModel");
-        secondElement2.setAttribute("src", "./LV/sceneEdited.glb");
-        asset.appendChild(secondElement2);
-
-        let lvEarringObject = sceneEl.querySelector('#lvEarring');
-        let lvEarringButton = document.getElementById("lvEarringBtn");
-        lvEarringButton.addEventListener("click", function(){
-            interactEarrings(lvEarringObject, lvEarringButton)
-        });
-            break;
-
-        case 3:
-        let firstElement3 = document.createElement("img");
-        firstElement3.setAttribute("id", "topitoEarringBtn");
-        firstElement3.setAttribute("src", "./images/topito.png");
-        optionsPanel.appendChild(firstElement3);
-    
-        let secondElement3 = document.createElement("a-asset-item");
-        secondElement3.setAttribute("id", "topitoEarringModel");
-        secondElement3.setAttribute("src", "./topito/sceneEdited2.glb");
-        asset.appendChild(secondElement3);
-
-        let topitoEarringObject = sceneEl.querySelector('#topitoEarring');
-        let topitoEarringButton = document.getElementById("topitoEarringBtn");
-        topitoEarringButton.addEventListener("click", function(){
-            interactEarrings(topitoEarringObject, topitoEarringButton)
-        });
-            break;
-  
-        default:
-            break;
-    }      
-  }
+// dos gafas
+//http://127.0.0.1:5500/index.html?img=https://raw.githubusercontent.com/vitrinea/vitrinea.github.io/main/images/woodGlasses.png,https://raw.githubusercontent.com/vitrinea/vitrinea.github.io/main/images/sunGlasses.png&model=https://raw.githubusercontent.com/vitrinea/vitrinea.github.io/main/woodGlasses/scene.gltf,https://raw.githubusercontent.com/vitrinea/vitrinea.github.io/main/sunGlasses/scene.gltf&idBtn=woodGlassesBtn,sunGlassesBtn&idModel=woodGlassesModel,sunGlassesModel&idAR=woodGlasses,sunGlasses
 
 
+//Split-----------------------------------------------------------------------------------------------------------------------------
+
+// let arrayidBtnURL = idBtnURL.split(",");
+let arrayimg = img.split(",");
+let arrayidModelURL = idModel.split(",");
+let arraymodel = model.split(",");
+let arrayidAR = idAR.split(",");
+//document.getElementById('thirdInsert').innerHTML= '<a-gltf-model visible="false" rotation="0 0 0" position="0 0 -0.45" scale="0.008 0.008 0.008" src="#sunGlassesModel" id="sunGlasses"></a-gltf-model>          <a-gltf-model visible="false" rotation="0 0 0" position="0 0 -0.46" scale="0.53 0.53 0.53" src="#normalGlassesModel" id="normalGlasses"></a-gltf-model>                      <a-gltf-model visible="false" rotation="0 0 0" position="0 0 -0.1" scale="0.52 0.52 0.52" src="#woodGlassesModel" id="woodGlasses"></a-gltf-model>';
 
 
+let arrayItems = [];
 
 
-
-/* let cancelBtnButton = document.getElementById("cancelBtn");
-cancelBtnButton.addEventListener("click", function(){  
-    interactNone();
-}); */
-
-//GLASSES------------------------------------------------------
-
-
-
-
-
-
-
-/* let glassesModels = [sunGlassesObject, normalGlassesObject, woodGlassesObject]; 
-let glassesButtons = [sunGlassesButton, normalGlassesButton, woodGlassesButton]; */
-
-
-
-
-//HATS------------------------------------------------------
-
-/* let hipHopHatObject = sceneEl.querySelector('#hipHopHat');
-let hipHopHatButton = document.getElementById("hipHopHatBtn");
-hipHopHatButton.addEventListener("click", function(){
-    interactHats(hipHopHatObject, hipHopHatButton)
-});
-
-let noelHatObject = sceneEl.querySelector('#noelHat');
-let noelHatButton = document.getElementById("noelHatBtn");
-noelHatButton.addEventListener("click", function(){
-    interactHats(noelHatObject, noelHatButton)
-});
-
-let cowboyHatObject = sceneEl.querySelector('#cowboyHat');
-let cowboyHatButton = document.getElementById("cowboyHatBtn");
-cowboyHatButton.addEventListener("click", function(){
-    interactHats(cowboyHatObject, cowboyHatButton)
-});
-
-let hatsModels = [hipHopHatObject, noelHatObject, cowboyHatObject]; 
-let hatsButtons = [hipHopHatButton, noelHatButton, cowboyHatButton];  */
-
-
-//NECKLACE------------------------------------------------------
-
-/* let militaryNecklaceObject = sceneEl.querySelector('#militaryNecklace');
-let militaryNecklaceButton = document.getElementById("militaryNecklaceBtn");
-militaryNecklaceButton.addEventListener("click", function(){
-    interactNecklace(militaryNecklaceObject, militaryNecklaceButton)
-});
-
-let goldNecklaceObject = sceneEl.querySelector('#goldNecklace');
-let goldNecklaceButton = document.getElementById("goldNecklaceBtn");
-goldNecklaceButton.addEventListener("click", function(){
-    interactNecklace(goldNecklaceObject, goldNecklaceButton)
-});
-
-let inidiNecklaceObject = sceneEl.querySelector('#inidiNecklace');
-let inidiNecklaceButton = document.getElementById("inidiNecklaceBtn");
-inidiNecklaceButton.addEventListener("click", function(){
-    interactNecklace(inidiNecklaceObject, inidiNecklaceButton)
-});
-
-let necklaceModels = [militaryNecklaceObject, goldNecklaceObject, inidiNecklaceObject]; 
-let necklaceButtons = [militaryNecklaceButton, goldNecklaceButton, inidiNecklaceButton]; */
-
-//EARRINGS------------------------------------------------------
-
-
-/*
-let earringsModels = [bimboEarringObject ,lvEarringObject , topitoEarringObject]; 
-let earringsButtons = [bimboEarringButton ,lvEarringButton , topitoEarringButton]; */
-
-
-
-
-
-//FUNCIONES------------------------------------------------------
-
-function interactGlasses(model, btn) {
-    if (model.getAttribute('visible')) { 
-        /* glassesModels.forEach(element => {
-            element.setAttribute('visible', false);
-        });
-        glassesButtons.forEach(element => {
-            element.setAttribute("class", "unselectedButton");
-        });*/
-        model.setAttribute('visible', false);
-        btn.setAttribute("class", "unselectedButton");  
-    }else{
-        /* glassesModels.forEach(element => {
-            element.setAttribute('visible', false);
-        });
-        glassesButtons.forEach(element => {
-            element.setAttribute("class", "unselectedButton");
-        }); */
-        model.setAttribute('visible', true);
-        btn.setAttribute("class", "selectedButton"); 
-    }
+for (let i = 0; i < arrayidAR.length; i++) {
+    let objeto = new Modelo(i, arrayimg[i],  arrayidModelURL[i], arraymodel[i], arrayidAR[i]);
+    arrayItems.push(arrayidAR[i]);
+    objeto.vitrinea();
 }
 
-/* function interactHats(model, btn) {
-    if (model.getAttribute('visible')) { 
-        hatsModels.forEach(element => {
-            element.setAttribute('visible', false);
-        });  
-        hatsButtons.forEach(element => {
-            element.setAttribute("class", "unselectedButton"); 
-        });  
-        model.setAttribute('visible', false);
-        btn.setAttribute("class", "unselectedButton"); 
-    }else{
-        hatsModels.forEach(element => {
-            element.setAttribute('visible', false);
-        });  
-        hatsButtons.forEach(element => {
-            element.setAttribute("class", "unselectedButton"); 
-        });  
-        model.setAttribute('visible', true);
-        btn.setAttribute("class", "selectedButton"); 
-    }
-} */
-
-/* function interactNecklace(model, btn) {
-    if (model.getAttribute('visible')) { 
-        necklaceModels.forEach(element => {
-            element.setAttribute('visible', false);
-        });  
-        necklaceButtons.forEach(element => {
-            element.setAttribute("class", "unselectedButton"); 
-        });  
-        model.setAttribute('visible', false);
-        btn.setAttribute("class", "unselectedButton"); 
-    }else{
-        necklaceModels.forEach(element => {
-            element.setAttribute('visible', false);
-        });  
-        necklaceButtons.forEach(element => {
-            element.setAttribute("class", "unselectedButton"); 
-        });  
-        model.setAttribute('visible', true);
-        btn.setAttribute("class", "selectedButton"); 
-    }
-}*/
-
-function interactEarrings(model, btn) {
-    if (model.getAttribute('visible')) { 
-        /* earringsModels.forEach(element => {
-            element.setAttribute('visible', false);
-        });  
-        earringsButtons.forEach(element => {
-            element.setAttribute("class", "unselectedButton"); 
-        });   */
-        model.setAttribute('visible', false);
-        btn.setAttribute("class", "unselectedButton"); 
-    }else{
-        /* earringsModels.forEach(element => {
-            element.setAttribute('visible', false);
-        });  
-        earringsButtons.forEach(element => {
-            element.setAttribute("class", "unselectedButton"); 
-        });   */
-        model.setAttribute('visible', true);
-        btn.setAttribute("class", "selectedButton"); 
-    }
-} 
-
-/* function interactNone(){
-    earringsModels.forEach(element => {
-        element.setAttribute('visible', false);
-    });  
-    earringsButtons.forEach(element => {
-        element.setAttribute("class", "unselectedButton"); 
-    }); 
-    necklaceModels.forEach(element => {
-        element.setAttribute('visible', false);
-    });  
-    necklaceButtons.forEach(element => {
-        element.setAttribute("class", "unselectedButton"); 
-    });  
-    hatsModels.forEach(element => {
-        element.setAttribute('visible', false);
-    });  
-    hatsButtons.forEach(element => {
-        element.setAttribute("class", "unselectedButton"); 
-    }); 
-    glassesModels.forEach(element => {
-        element.setAttribute('visible', false);
-    });
-    glassesButtons.forEach(element => {
-        element.setAttribute("class", "unselectedButton");
-    });
-} */
-
-
-
-
+console.log(arrayItems);
