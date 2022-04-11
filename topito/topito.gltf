@@ -1,0 +1,346 @@
+{
+    "asset" : {
+        "generator" : "Khronos glTF Blender I/O v1.7.33",
+        "version" : "2.0"
+    },
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Scene",
+            "nodes" : [
+                0,
+                1
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "11757_Earings_v1_L2",
+            "rotation" : [
+                0.7071068286895752,
+                0,
+                0,
+                0.7071067094802856
+            ],
+            "translation" : [
+                8.338698387145996,
+                -4.401917934417725,
+                -13.492045402526855
+            ]
+        },
+        {
+            "mesh" : 1,
+            "name" : "11757_Earings_v1_L2.001",
+            "rotation" : [
+                0.7071068286895752,
+                0,
+                0,
+                0.7071067094802856
+            ],
+            "translation" : [
+                -8.168915748596191,
+                -4.401917934417725,
+                -13.492045402526855
+            ]
+        }
+    ],
+    "materials" : [
+        {
+            "doubleSided" : true,
+            "name" : "gold.001",
+            "pbrMetallicRoughness" : {
+                "baseColorFactor" : [
+                    0.7020000219345093,
+                    0.4235000014305115,
+                    0.07450000196695328,
+                    1
+                ],
+                "metallicFactor" : 0,
+                "roughnessFactor" : 0.7312580943107605
+            }
+        },
+        {
+            "doubleSided" : true,
+            "name" : "pearl.001",
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 0
+                },
+                "metallicFactor" : 0,
+                "roughnessFactor" : 0.8300327062606812
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "11757_Earings_v1_L2",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 0,
+                        "NORMAL" : 1,
+                        "TEXCOORD_0" : 2
+                    },
+                    "indices" : 3,
+                    "material" : 0
+                },
+                {
+                    "attributes" : {
+                        "POSITION" : 4,
+                        "NORMAL" : 5,
+                        "TEXCOORD_0" : 6
+                    },
+                    "indices" : 7,
+                    "material" : 1
+                }
+            ]
+        },
+        {
+            "name" : "11757_Earings_v1_L2.001",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 8,
+                        "NORMAL" : 9,
+                        "TEXCOORD_0" : 10
+                    },
+                    "indices" : 3,
+                    "material" : 0
+                },
+                {
+                    "attributes" : {
+                        "POSITION" : 11,
+                        "NORMAL" : 12,
+                        "TEXCOORD_0" : 13
+                    },
+                    "indices" : 7,
+                    "material" : 1
+                }
+            ]
+        }
+    ],
+    "textures" : [
+        {
+            "sampler" : 0,
+            "source" : 0
+        }
+    ],
+    "images" : [
+        {
+            "mimeType" : "image/jpeg",
+            "name" : "11757_Earings_v1_diffuse",
+            "uri" : "11757_Earings_v1_diffuse.jpg"
+        }
+    ],
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5126,
+            "count" : 11204,
+            "max" : [
+                0.3762710988521576,
+                1.2039544582366943,
+                0.20405526459217072
+            ],
+            "min" : [
+                -0.3762710988521576,
+                0.0013018782483413815,
+                -0.20405526459217072
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 11204,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 11204,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5123,
+            "count" : 60528,
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 4,
+            "componentType" : 5126,
+            "count" : 6530,
+            "max" : [
+                0.5639113783836365,
+                2.3070130348205566,
+                0.5639113783836365
+            ],
+            "min" : [
+                -0.5639113783836365,
+                1.2039544582366943,
+                -0.5639113783836365
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 5,
+            "componentType" : 5126,
+            "count" : 6530,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 6,
+            "componentType" : 5126,
+            "count" : 6530,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 7,
+            "componentType" : 5123,
+            "count" : 38160,
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 8,
+            "componentType" : 5126,
+            "count" : 11204,
+            "max" : [
+                0.3762710988521576,
+                1.2039544582366943,
+                0.20405526459217072
+            ],
+            "min" : [
+                -0.3762710988521576,
+                0.0013018782483413815,
+                -0.20405526459217072
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 9,
+            "componentType" : 5126,
+            "count" : 11204,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 10,
+            "componentType" : 5126,
+            "count" : 11204,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 11,
+            "componentType" : 5126,
+            "count" : 6530,
+            "max" : [
+                0.5639113783836365,
+                2.3070130348205566,
+                0.5639113783836365
+            ],
+            "min" : [
+                -0.5639113783836365,
+                1.2039544582366943,
+                -0.5639113783836365
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 12,
+            "componentType" : 5126,
+            "count" : 6530,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 13,
+            "componentType" : 5126,
+            "count" : 6530,
+            "type" : "VEC2"
+        }
+    ],
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 134448,
+            "byteOffset" : 0
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 134448,
+            "byteOffset" : 134448
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 89632,
+            "byteOffset" : 268896
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 121056,
+            "byteOffset" : 358528
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 78360,
+            "byteOffset" : 479584
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 78360,
+            "byteOffset" : 557944
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 52240,
+            "byteOffset" : 636304
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 76320,
+            "byteOffset" : 688544
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 134448,
+            "byteOffset" : 764864
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 134448,
+            "byteOffset" : 899312
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 89632,
+            "byteOffset" : 1033760
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 78360,
+            "byteOffset" : 1123392
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 78360,
+            "byteOffset" : 1201752
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 52240,
+            "byteOffset" : 1280112
+        }
+    ],
+    "samplers" : [
+        {
+            "magFilter" : 9729,
+            "minFilter" : 9987
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 1332352,
+            "uri" : "topito.bin"
+        }
+    ]
+}
