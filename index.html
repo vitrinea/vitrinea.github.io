@@ -178,25 +178,35 @@
 
         <a-camera active="false" position="0 0 0" look-controls-enabled="false" wasd-controls-enabled="false"></a-camera>
 
+        <a-entity mindar-face-target="anchorIndex: 6">
+          <a-gltf-model mindar-face-occluder position="0 -0.3 0.15"rotation="0 0 0" scale="0.065 0.065 0.065" src="#headModel"></a-gltf-model>
+        </a-entity>
+        <!-- <a-entity mindar-face-target="anchorIndex: 6" id="thirdInsert">          
+        </a-entity> -->
+
+        <!--GLASSES-->
         <a-entity mindar-face-target="anchorIndex: 6" id="thirdInsert">
           <a-gltf-model mindar-face-occluder position="0 -0.3 0.15"rotation="0 0 0" scale="0.065 0.065 0.065" src="#headModel"></a-gltf-model>
-          <!--GLASSES-->
+          
           <a-gltf-model visible="false" rotation="0 0 0" position="0 0 -0.45" scale="0.008 0.008 0.008" src="#sunGlassesModel" id="sunGlasses"></a-gltf-model>
           <a-gltf-model visible="false" rotation="0 0 0" position="0 0 -0.46" scale="0.53 0.53 0.53" src="#normalGlassesModel" id="normalGlasses"></a-gltf-model>
           <a-gltf-model visible="false" rotation="0 0 0" position="0 0 -0.1" scale="0.52 0.52 0.52" src="#woodGlassesModel" id="woodGlasses"></a-gltf-model>
         </a-entity>
+        
         <!--HATS-->
-        <!--<a-entity mindar-face-target="anchorIndex: 151">
+        <a-entity mindar-face-target="anchorIndex: 151">
           <a-gltf-model visible="false" rotation="0 0 -1.7" position="0 -0.1 -0.55" scale="1 1 1" src="#hipHopHatModel" id="hipHopHat"></a-gltf-model>
           <a-gltf-model visible="false" rotation="0 0 0" position="0.2 0.32 -0.46" scale="5.7 5.7 5.7" src="#noelHatModel" id="noelHat"></a-gltf-model>
           <a-gltf-model visible="false" rotation="0 0 0" position="0 -0.26 -0.5" scale="0.003 0.003 0.003" src="#cowboyHatModel" id="cowboyHat"></a-gltf-model>
         </a-entity>
-        
+
+        <!--NECKLACE-->
         <a-entity mindar-face-target="anchorIndex: 152">
           <a-gltf-model visible="false" rotation="0 0 0" position="-0.1 -14.5 -3.560" scale="0.8 0.8 0.8" src="#militaryNecklaceModel" id="militaryNecklace"></a-gltf-model>
           <a-gltf-model visible="false" rotation="0 0 0" position="-0.01 -9.8 -1.5" scale="4.8 4.8 4.8" src="#goldNecklaceModel" id="goldNecklace"></a-gltf-model>
           <a-gltf-model visible="false" rotation="0 0 0" position="0 -0.8 -0.5" scale="0.0035 0.0035 0.0035" src="#inidiNecklaceModel" id="inidiNecklace"></a-gltf-model>
-        </a-entity>--><!--NECKLACE-->
+        </a-entity>
+        
         <!--EARRINGS-->
         <a-entity mindar-face-target="anchorIndex: 151">
           <a-gltf-model visible="false" rotation="0 0 0" position="0 -0.3 0.15" scale="0.065 0.065 0.065" src="#bimboEarringModel" id="bimboEarring"></a-gltf-model>
@@ -206,6 +216,8 @@
       
       </a-scene>
     </div>
+    <div id="cont1"></div>
+    <script src="firebase.js" type="module"></script>
     <script src="./script.js"></script>
   </body>
 </html>
