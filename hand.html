@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+
+
+  <style>
+
+    *{
+      margin: 0;
+    }
+
+    .options-panel::-webkit-scrollbar {       
+      height: 10px;
+    }
+
+    .options-panel::-webkit-scrollbar-track {
+      background: rgb(218, 198, 250);        /* color of the tracking area */
+    }
+
+    .options-panel::-webkit-scrollbar-thumb {
+      background-color: rgb(149, 89, 254);    /* color of the scroll thumb */
+      border-radius: 20px;       /* roundness of the scroll thumb */
+      border: 1px solid rgb(218, 198, 250);  /* creates padding around scroll thumb */
+    }
+
+
+    .container {
+      overflow: hidden;
+      position: absolute;
+      left: 20%;
+      width: 50%;
+      height: 60%;
+    }
+    .options-panel {
+      background-color: rgba(171, 184, 255, 0.438);
+      display: flex;  
+      /* flex-direction: column;
+      width: 160px; */
+      overflow-x: scroll;
+      z-index: 2;
+      /* position: fixed;
+      bottom: 0; */
+    }
+    .options-panel img {
+      border: solid 1px;
+      border-color: white;
+      width: 100px;
+      height: 100px;
+      cursor: pointer; 
+      border-radius: 50px;
+      margin: 20px;
+    }
+    .options-panel img.selected {
+      background-color: green;
+    }
+
+    .logos{
+      background-color: rgb(218, 198, 250);
+      display: flex;
+      justify-content: space-around;
+      align-items: baseline;
+      padding-bottom: 30px;
+      padding-top: 10px;
+    }
+
+    @media (max-width: 700px) {
+      .container {
+      overflow: hidden;
+      position: absolute;
+      left: 0px;
+      width: 100%;
+      height: 100%;
+    }
+
+      .options-panel img {
+        border: solid 1px;
+        border-color: white;
+        width: 75px;
+        height: 75px;
+        cursor: pointer; 
+        border-radius: 50px;
+        margin: 20px;
+      }
+      #vitrineaTitle{
+        width: 250px;
+        height: 80px
+      }
+      #vitrineaLogo{
+        width: 60px;
+        height: 60px
+      }
+      .options-panel::-webkit-scrollbar {       
+          height: 0px;
+        }
+    }
+
+    .selectedButton{
+      border-radius: 100%;
+      padding: 2px;
+      background-color: rgb(149, 89, 254);
+    }
+
+    .unselectedButton{
+      border: rgba(171, 184, 255, 0) 2px solid;
+    }
+
+    #makeUp{
+      background-color: rgb(79, 171, 251);
+      color: white;
+      width: 70px;
+      height: 30px;
+    }
+    
+    #menu ul li {
+background-color:#2e518b;
+}
+
+#menu ul {
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+
+#menu ul a {
+  display:block;
+  color:#fff;
+  text-decoration:none;
+  font-weight:400;
+  font-size:15px;
+  padding:10px;
+  font-family:"HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform:uppercase;
+  letter-spacing:1px;
+}
+
+#menu ul li {
+  position:relative;
+  float:left;
+  margin:0;
+  padding:0;
+}
+
+#menu ul li:hover {
+  background:#5b78a7;
+}
+
+#menu ul ul {
+  display:none;
+  position:absolute;
+  top:100%;
+  left:0;
+  padding:0;
+}
+
+#menu ul ul li {
+  float:none;
+  width:150px
+}
+
+#menu ul ul a {
+  line-height:120%;
+  padding:10px 15px;
+}
+
+#menu ul li:hover > ul {
+  display:block;
+}
+  </style>
+  </head>
+  <body>
+
+    <div class="logos" id="menu">
+      <div>
+        <ul>
+          <li><a href="#">░</a>
+            <ul>
+              <li><a href="./index.html">Rostro</a></li>
+              <li><a href="./body.html">Cuerpo</a></li>
+              <li><a href="./makeup.html">Maquillaje</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <img id="vitrineaTitle" src="./images/large.png" width="400px" height="150px" alt="Vitrinea title" >
+      <img id="vitrineaLogo" src="./images/vitrinea.png" width="100px" height="100px" alt="Vitrinea logo" >
+    </div>
+
+    <div class="options-panel" id="firstInsert">
+        
+    </div>
+
+
+  <div class="container">
+    <video class="input_video" style="display: none;"></video>
+    <canvas class="output_canvas" width="1080px" height="1080px"></canvas>
+  </div>
+
+  <script src="./hand.js" type="module"></script>
+</body>
+</html>

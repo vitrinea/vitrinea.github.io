@@ -1,0 +1,283 @@
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.4/dist/mindar-face.prod.js"></script>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.4/dist/mindar-face-aframe.prod.js"></script>
+  <style>
+
+    *{
+      margin: 0;
+    }
+
+    .options-panel::-webkit-scrollbar {       
+      height: 10px;
+    }
+
+    .options-panel::-webkit-scrollbar-track {
+      background: rgb(218, 198, 250);        /* color of the tracking area */
+    }
+
+    .options-panel::-webkit-scrollbar-thumb {
+      background-color: rgb(149, 89, 254);    /* color of the scroll thumb */
+      border-radius: 20px;       /* roundness of the scroll thumb */
+      border: 1px solid rgb(218, 198, 250);  /* creates padding around scroll thumb */
+    }
+
+
+    .container {
+      overflow: hidden;
+      position: absolute;
+      left: 20%;
+      width: 50%;
+      height: 60%;
+    }
+    .options-panel {
+      background-color: rgba(171, 184, 255, 0.438);
+      display: flex;  
+      /* flex-direction: column;
+      width: 160px; */
+      overflow-x: scroll;
+      z-index: 2;
+      /* position: fixed;
+      bottom: 0; */
+    }
+    .options-panel img {
+      border: solid 1px;
+      border-color: white;
+      width: 100px;
+      height: 100px;
+      cursor: pointer; 
+      border-radius: 50px;
+      margin: 20px;
+    }
+    .options-panel img.selected {
+      background-color: green;
+    }
+
+    .logos{
+      background-color: rgb(218, 198, 250);
+      display: flex;
+      justify-content: space-around;
+      align-items: baseline;
+      padding-bottom: 30px;
+      padding-top: 10px;
+    }
+
+    @media (max-width: 700px) {
+      .container {
+      overflow: hidden;
+      position: absolute;
+      left: 0px;
+      width: 100%;
+      height: 100%;
+    }
+
+      .options-panel img {
+        border: solid 1px;
+        border-color: white;
+        width: 75px;
+        height: 75px;
+        cursor: pointer; 
+        border-radius: 50px;
+        margin: 20px;
+      }
+      #vitrineaTitle{
+        width: 250px;
+        height: 80px
+      }
+      #vitrineaLogo{
+        width: 50;
+        height: 50
+      }
+      .options-panel::-webkit-scrollbar {       
+          height: 0px;
+        }
+    }
+
+    .selectedButton{
+      border-radius: 100%;
+      padding: 2px;
+      background-color: rgb(149, 89, 254);
+    }
+
+    .unselectedButton{
+      border: rgba(171, 184, 255, 0) 2px solid;
+    }
+
+    #makeUp{
+      background-color: rgb(79, 171, 251);
+      color: white;
+      width: 70px;
+      height: 30px;
+    }
+    
+
+
+
+#menu ul li {
+background-color:#2e518b;
+}
+
+#menu ul {
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+
+#menu ul a {
+  display:block;
+  color:#fff;
+  text-decoration:none;
+  font-weight:400;
+  font-size:15px;
+  padding:10px;
+  font-family:"HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform:uppercase;
+  letter-spacing:1px;
+}
+
+#menu ul li {
+  position:relative;
+  float:left;
+  margin:0;
+  padding:0;
+}
+
+#menu ul li:hover {
+  background:#5b78a7;
+}
+
+#menu ul ul {
+  display:none;
+  position:absolute;
+  top:100%;
+  left:0;
+  padding:0;
+}
+
+#menu ul ul li {
+  float:none;
+  width:150px
+}
+
+#menu ul ul a {
+  line-height:120%;
+  padding:10px 15px;
+}
+
+#menu ul li:hover > ul {
+  display:block;
+}
+  </style>
+  </head>
+  <body>
+
+    <div class="logos" id="menu">
+      <div>
+        <ul>
+          <li><a href="#">░</a>
+            <ul>
+              <li><a href="./body.html">Cuerpo</a></li>
+              <li><a href="./hand.html">Manos</a></li>
+              <li><a href="./makeup.html">Maquillaje</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <img id="vitrineaTitle" src="./images/large.png" width="400px" height="150px" alt="Vitrinea title" >
+      <img id="vitrineaLogo" src="./images/vitrinea.png" width="100px" height="100px" alt="Vitrinea logo" >
+    </div>
+
+
+    <div class="options-panel" id="firstInsert">
+
+      <!-- <img id="cancelBtn" src="./images/cancel.png"/> -->
+
+      <!-- <img id="sunGlassesBtn" src="./images/sun.png"/> -->
+      <!-- <img id="normalGlassesBtn" src="./images/normal.png"/> -->
+      <!-- <img id="woodGlassesBtn" src="./images/wood.png"/> -->
+
+      <!-- <img id="hipHopHatBtn" src="./images/hip-hop.png"/>
+      <img id="noelHatBtn" src="./images/noel.png"/>
+      <img id="cowboyHatBtn" src="./images/cowboy.png"/> 
+
+      <img id="militaryNecklaceBtn" src="./images/military.png"/>
+      <img id="goldNecklaceBtn" src="./images/gold.png"/>
+      <img id="inidiNecklaceBtn" src="./images/indi.png"/> 
+
+      <img id="bimboEarringBtn" src="./images/bimbo.png"/>      
+      <img id="lvEarringBtn" src="./images/LV.png"/>      
+      <img id="topitoEarringBtn" src="./images/topito.png"/> -->      
+
+    </div>
+    
+    <div class="container">
+
+      <a-scene mindar-face embedded color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
+        <a-assets id="secondtInsert">
+
+            <a-asset-item id="headModel" src="./headOccluderJustNeck.glb"></a-asset-item>
+
+            <!-- <a-asset-item id="sunGlassesModel" src="./sunGlasses/scene.gltf"></a-asset-item> -->
+            <!-- <a-asset-item id="normalGlassesModel" src="./normalGlasses/scene.gltf"></a-asset-item> -->
+            <!-- <a-asset-item id="woodGlassesModel" src="./woodGlasses/scene.gltf"></a-asset-item> -->
+  
+            <!-- <a-asset-item id="hipHopHatModel" src="./hip_hop/scene.gltf"></a-asset-item>
+            <a-asset-item id="noelHatModel" src="./noel/scene.gltf"></a-asset-item>
+            <a-asset-item id="cowboyHatModel" src="./cowboy/scene.gltf"></a-asset-item>
+  
+            <a-asset-item id="militaryNecklaceModel" src="./military/scene.gltf"></a-asset-item>
+            <a-asset-item id="goldNecklaceModel" src="./oro/scene.gltf"></a-asset-item>
+            <a-asset-item id="inidiNecklaceModel" src="./indi/scene.gltf"></a-asset-item>
+            
+            <a-asset-item id="bimboEarringModel" src="./bimbo/sceneEdited.glb"></a-asset-item>
+            <a-asset-item id="lvEarringModel" src="./LV/sceneEdited.glb"></a-asset-item>
+            <a-asset-item id="topitoEarringModel" src="./topito/sceneEdited2.glb"></a-asset-item> -->
+  
+
+        </a-assets>
+
+        <a-camera active="false" position="0 0 0" look-controls-enabled="false" wasd-controls-enabled="false"></a-camera>
+
+        <a-entity mindar-face-target="anchorIndex: 6">
+          <a-gltf-model mindar-face-occluder position="0 -0.3 0.15"rotation="0 0 0" scale="0.065 0.065 0.065" src="#headModel"></a-gltf-model>
+        </a-entity>
+        <!-- <a-entity mindar-face-target="anchorIndex: 6" id="thirdInsert">          
+        </a-entity> -->
+
+        <!--GLASSES-->
+        <a-entity mindar-face-target="anchorIndex: 6" id="thirdInsert">
+          <a-gltf-model visible="false" rotation="0 0 0" position="0 0 -0.45" scale="0.008 0.008 0.008" src="#sunGlassesModel" id="sunGlasses"></a-gltf-model>
+          <a-gltf-model visible="false" rotation="0 0 0" position="0 0 -0.46" scale="0.53 0.53 0.53" src="#normalGlassesModel" id="normalGlasses"></a-gltf-model>
+          <a-gltf-model visible="false" rotation="0 0 0" position="0 0 -0.1" scale="0.52 0.52 0.52" src="#woodGlassesModel" id="woodGlasses"></a-gltf-model>
+        </a-entity>
+        
+        <!--HATS-->
+        <a-entity mindar-face-target="anchorIndex: 151">
+          <a-gltf-model visible="false" rotation="0 0 -1.7" position="0 -0.1 -0.55" scale="1 1 1" src="#hipHopHatModel" id="hipHopHat"></a-gltf-model>
+          <a-gltf-model visible="false" rotation="0 0 0" position="0.2 0.32 -0.46" scale="5.7 5.7 5.7" src="#noelHatModel" id="noelHat"></a-gltf-model>
+          <a-gltf-model visible="false" rotation="0 0 0" position="0 -0.26 -0.5" scale="0.003 0.003 0.003" src="#cowboyHatModel" id="cowboyHat"></a-gltf-model>
+        </a-entity>
+
+        <!--NECKLACE-->
+        <a-entity mindar-face-target="anchorIndex: 152">
+          <a-gltf-model visible="false" rotation="0 0 0" position="-0.1 -14.5 -3.560" scale="0.8 0.8 0.8" src="#militaryNecklaceModel" id="militaryNecklace"></a-gltf-model>
+          <a-gltf-model visible="false" rotation="0 0 0" position="-0.01 -9.8 -1.5" scale="4.8 4.8 4.8" src="#goldNecklaceModel" id="goldNecklace"></a-gltf-model>
+          <a-gltf-model visible="false" rotation="0 0 0" position="0 -0.8 -0.5" scale="0.0035 0.0035 0.0035" src="#inidiNecklaceModel" id="inidiNecklace"></a-gltf-model>
+        </a-entity>
+        
+        <!--EARRINGS-->
+        <a-entity mindar-face-target="anchorIndex: 151">
+          <a-gltf-model visible="false" rotation="0 0 0" position="0 -0.3 0.15" scale="0.065 0.065 0.065" src="#bimboEarringModel" id="bimboEarring"></a-gltf-model>
+          <a-gltf-model visible="false" rotation="0 0 0" position="0 -0.3 0.15" scale="0.065 0.065 0.065" src="#lvEarringModel" id="lvEarring"></a-gltf-model>
+          <a-gltf-model visible="false" rotation="0 0 0" position="0 -0.3 0.15" scale="0.065 0.065 0.065" src="#topitoEarringModel" id="topitoEarring"></a-gltf-model>
+        </a-entity>
+      
+      </a-scene>
+    </div>
+    <div id="cont1"></div>
+    <script src="./index.js"></script>
+  </body>
+</html>
