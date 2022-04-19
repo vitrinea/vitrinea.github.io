@@ -1,4 +1,4 @@
-const videoElement = document.getElementsByClassName('input_video')[0];
+const videoElement = document.getElementsByClassName('input_video')[1];
 const canvasElement = document.getElementsByClassName('output_canvas')[0];
 const canvasCtx = canvasElement.getContext('2d');
 
@@ -285,7 +285,7 @@ const hands = new Hands({locateFile: (file) => {
   return `https://cdn.jsdelivr.net/npm/@mediapipe/hands/${file}`;
 }});
 hands.setOptions({
-  selfieMode: true,
+  selfieMode: false,
   maxNumHands: 2,
   modelComplexity: 1,
   minDetectionConfidence: 0.5,
