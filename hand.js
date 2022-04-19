@@ -285,6 +285,7 @@ const hands = new Hands({locateFile: (file) => {
   return `https://cdn.jsdelivr.net/npm/@mediapipe/hands/${file}`;
 }});
 hands.setOptions({
+  selfieMode: true,
   maxNumHands: 2,
   modelComplexity: 1,
   minDetectionConfidence: 0.5,
