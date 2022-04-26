@@ -57,13 +57,30 @@
     }
 
     .logos{
-      background-color: rgb(218, 198, 250);
+      background: rgb(61,192,232);
+      background: linear-gradient(45deg, rgba(61,192,232,1) 0%, rgba(109,128,207,1) 52%, rgba(140,88,191,1) 87%, rgba(152,73,186,1) 100%);
       display: flex;
       justify-content: space-around;
       align-items: baseline;
       padding-bottom: 30px;
       padding-top: 10px;
     }
+    
+        #vitrineaBack{
+      width: 40px;
+      height: 50px;
+      padding-bottom: 6px;
+    }
+
+    #vitrineaTitle{
+        width: 250px;
+        height: 80px
+      }
+      #vitrineaLogo{
+        width: 70px;
+        height: 50px;
+        padding-bottom: 6px;
+      }
 
     @media (max-width: 700px) {
       .container {
@@ -82,14 +99,6 @@
         cursor: pointer; 
         border-radius: 50px;
         margin: 20px;
-      }
-      #vitrineaTitle{
-        width: 250px;
-        height: 80px
-      }
-      #vitrineaLogo{
-        width: 50;
-        height: 50
       }
       .options-panel::-webkit-scrollbar {       
           height: 0px;
@@ -175,19 +184,9 @@ background-color:#2e518b;
   <body>
 
     <div class="logos" id="menu">
-      <div>
-        <ul>
-          <li><a href="#">░</a>
-            <ul>
-              <li><a href="./body.html">Cuerpo</a></li>
-              <li><a href="./hand.html">Manos</a></li>
-              <li><a href="./makeup.html">Maquillaje</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-      <img id="vitrineaTitle" src="./images/large.png" width="400px" height="150px" alt="Vitrinea title" >
-      <img id="vitrineaLogo" src="./images/vitrinea.png" width="100px" height="100px" alt="Vitrinea logo" >
+      <img id="vitrineaBack" src="./vitrinea/back.png" alt="Vitrinea title" >
+      <img id="vitrineaTitle" src="./vitrinea/vitrinea.png" alt="Vitrinea title" >
+      <img id="vitrineaLogo" src="./vitrinea/carrito.png" alt="Vitrinea logo" >
     </div>
 
 
